@@ -1,0 +1,150 @@
+/* pages/typeproduct/typeproduct.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+.parent{
+  padding: 12rpx 20rpx;
+  margin-bottom:10rpx;
+  line-height: 80rpx;
+  background-color: white;
+}
+.parent text{
+  display: inline-block;
+  height:60rpx;
+  line-height: 60rpx;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color:#dcdcdc;
+  border-radius: 8rpx;
+  margin-right:20rpx;
+  padding:0 20rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+
+.nav {
+  background: white;
+  z-index: 99;
+  box-shadow: 0rpx -1.2rpx 10rpx 4rpx #dddddd99; /*for Android*/
+  -webkit-box-shadow: 0px -0.6px 5px 2px #dddddd99;
+}
+.positionFixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0rpx -1.2rpx 10rpx 4rpx #dddddd99; /*for Android*/
+  -webkit-box-shadow: 0px -0.6px 5px 2px #dddddd99;
+}
+
+/************* 导航栏 ***************/
+/* .positionFixed {
+  box-shadow: 0rpx -1.2rpx 10rpx 4rpx #dddddd99; /*for Android*/
+  /*-webkit-box-shadow: 0px -0.6px 5px 2px #dddddd99;
+  position: fixed;
+  left: 0;
+  top: 0rpx;
+  z-index:99;
+  width: 100%;
+  flex: none;
+  display: flex;
+  background: #fff;
+  font-size: 26rpx;
+  color: #555;
+  
+} */
+.navbar{
+  flex: 1;
+  display: flex;
+  background: #fff;
+  font-size: 26rpx;
+  color: #555;
+  box-sizing: border-box;
+  padding:0 28rpx;
+}
+.navbar .item{
+  position: relative;
+  flex: 1;
+  text-align: center;
+  line-height: 70rpx;
+}
+.navbar .item.active{
+  color: #F46;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5rpx;
+  background: #F46;
+}
+
+/**************** 商品列表 ****************/
+.rootstyle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.titles{
+  height:60rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top:30rpx;
+  font-size: 26rpx;
+}
+
+.titles>image{
+  height:26rpx;
+  width:35%;
+  margin-top: 7rpx;
+}
+
+/* 上侧图片父组件样式 */
+.itp{
+  width:49.4%;
+  background: white;
+  margin-top:10rpx;
+}
+/* 图片的宽高 */
+.itp>image{
+  width:100%;
+  height:370rpx
+}
+.tp{padding: 0 18rpx;}
+.tp>view{margin:12rpx 0}
+.tp>view:nth-child(1){
+  font-size: 27rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.tp>view:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin:15rpx 0
+}
+.tp>view:nth-child(3){
+  color:#f46;
+  font-size: 36rpx;
+  text-align: left;
+  font-weight: 500;
+}
+
+.tp>view:nth-child(3) text:last-child{
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin-left: 28rpx;
+}
+.specify-style {
+  font-weight: 800;
+  position: relative;
+}

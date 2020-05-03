@@ -1,0 +1,132 @@
+<!--index.wxml-->
+<view class='page_search'>
+  <view class="search">
+    <view class="search_arr" bindtap="suo">
+      <image src="/images/icon_search_gray.png"></image>
+      <input disabled placeholder="搜索萌物、商家"/>
+    </view>
+  </view>
+</view>  
+
+<view>
+  <view class="top_slide">
+    <swiper style="height: 280rpx;">
+      <swiper-item>
+        <image src="https://pic.hanfugou.com/web/2020/4/23/16/8a1643e4a097477e9d9d2fe6f38c4a41.png_min.jpg" style="width:375px;height:175px" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="https://pic.hanfugou.com/web/2020/4/22/16/30d547711a26412ea1e4c6a2735b10f5.png_min.jpg" style="width:375px;height:175px" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="https://pic.hanfugou.com/web/2020/4/16/15/79622f728e8944d7b906470e8df99451.png_min.jpg" style="width:375px;height:175px" mode="widthFix"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+<view>
+  <view class="typelist">
+    <view class="type" wx:for="{{typepic}}" wx:key="index">
+      <image src="{{item.url}}" mode="widthFix" bindtap="typeProduct" data-tid="{{item.ID}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+    <view class="type">
+      <image src="/images/icon_type_more.png" mode="widthFix" bindtap="typeList"></image>
+      <text>全部分类</text>
+    </view>
+  </view>
+  <view class="trading">
+    <view class="nav_top">
+      <view>
+        <image src="/images/icon_shop_def.png" mode="widthFix"></image>
+        <text>品牌馆</text>
+      </view>
+      <view>
+        <text>查看更多</text>
+        <image src="/images/icon_more_def.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="shoplist">
+      <block wx:for="{{goodRan}}" wx:key="index">
+        <image src="{{item.LogoSrc}}" mode="widthFix"></image>
+      </block>
+    </view>
+    
+    <!-- <view class="brand">
+      <image src="/images/shop.png" mode="widthFix"></image>
+      <text>品牌馆</text>
+    </view>
+    <view class="brand">
+      <image src="/images/fleas.png" mode="widthFix"></image>
+      <text>二手铺</text>
+    </view> -->
+  </view>
+</view>
+
+<view class="special">
+  <view class="rootstyle" wx:for="{{specialList}}" wx:for-item="special" wx:for-index="i" wx:key="i">
+    <!-- 上侧图片 -->
+    <view class="topimg">
+      <image src="{{special.FaceUrl}}" bindtap="loadMoreSpecial"  data-sid="{{special.ID}}" class="imgstyle" mode="aspectFill"></image>
+    </view>
+    <!-- 下侧图片和价格 -->
+    <view class="bottom">
+      <view class="bottomip" bindtap="productDetaile" data-pid="{{sl.ID}}" wx:for="{{special.Products}}" wx:for-item="sl" wx:for-index="i" wx:key="i">
+        <image class="bottomimg" src="{{sl.FaceSrc}}" mode="aspectFill"></image>
+        <text class="bottomprice">¥ {{sl.BasePrice}}.00</text>
+      </view>
+      <view class="bottomip">
+        <image class="bottomimg" src="{{loadMorePic}}"  bindtap="loadMoreSpecial" data-sid="{{special.ID}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="more">
+    <button size="mini" bindtap="speciallist">更多专题 ></button>
+  </view>
+</view>
+
+
+<view class="selling_product">
+  <view class="titles">
+    <image src="/images/left_line.png"></image>
+    <text>本周热卖</text>
+    <image src="/images/right_line.png"></image>
+  </view>
+  <!-- itemstyle -->
+  <view class="rootstyle">
+    <view class="itp" wx:for="{{productListHot}}" wx:for-item="plh" wx:for-index="i" wx:key="i"  bindtap="productDetaile" data-pid="{{plh.ID}}">
+      <image class="imgstyle" src="{{plh.FaceSrc}}" mode="aspectFill"></image>
+      <view class="title">{{plh.Name}}</view>
+      <view class="price">¥ {{plh.Price}}.00</view>
+    </view>
+  </view>
+</view>
+
+<view class="new_product">
+  <view class="tr">
+    <view class="titles">
+      <image src="/images/left_side.png"></image>
+      <text>精选萌物</text>
+      <image src="/images/right_side.png"></image>
+    </view>
+    <!-- itemstyle -->
+    <view class="rootstyle" >
+      <view class="itp" data-pid="{{spl.ID}}" bindtap="productDetaile" wx:for="{{selectproductList}}" wx:for-item="spl" wx:for-index="i" wx:key="i">
+        <image src="{{spl.FaceSrc}}" mode="aspectFill"></image>
+        <view class="tp">
+          <view class="title">{{spl.Name}}</view>
+          <view>
+            <text>{{spl.Shop.Name}}</text>
+            <text>{{spl.Shop.CityNames}}</text>
+          </view>
+          <view class="price">
+            <text>¥{{spl.Price}}</text>
+            <text>{{spl.SaveCount}}人种草</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button wx:if="{{hasMore==false}}" disabled="true" style="margin:0;width:100%">我也是有底线的...</button>
+  </view>
+</view>
+

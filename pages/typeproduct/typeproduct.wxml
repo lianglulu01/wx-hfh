@@ -1,0 +1,129 @@
+<!--pages/typeproduct/typeproduct.wxml-->
+<!-- 查询商品列表 -->
+<view style="height: {{windowHeight}}px;">
+  <scroll-view bindscroll='onPageScroll' scroll-y="true" style="height: 100vh;">
+  <!-- 顶部 类 -->
+    <block wx:if="{{typeProductParent.length!=0}}" >
+      <view class="parent" id="leigao" bindscroll='leigao' scroll-y="true" style="min-height:60rpx">
+        <text wx:for="{{typeProductParent}}" wx:key="index" size="mini" bindtap="typeProductList" data-tid="{{item.ID}}">{{item.Name}}</text>
+      </view>
+    </block>
+
+    <scroll-view scroll-x="true" class="nav {{navFixed? 'positionFixed':''}}">
+    <!-- 导航栏 -->
+      <scroll-view id="comment" bindtap="Changescroll" scroll-y="true" bindscroll='onPageScroll' class="navbar {{top<block_ScrollTop-35?'specify-style':''}}" enable-flex>
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+      </scroll-view>
+    </scroll-view>
+
+    <view wx:if="{{currentTab==0}}">
+      <view class="rootstyle" id='block'>
+        <view class="itp" data-pid="{{tpl0.ID}}" bindtap="productDetaile" wx:for="{{typeProductList}}" wx:for-item="tpl0" wx:for-index="i" wx:key="i">
+          <image src="{{tpl0.FaceSrc}}" mode="aspectFill"></image>
+          <view class="tp">
+            <view class="title">{{tpl0.Name}}</view>
+            <view>
+              <text>{{tpl0.Shop.Name}}</text>
+              <text>{{tpl0.Shop.CityNames}}</text>
+            </view>
+            <view class="price">
+              <text>¥{{tpl0.Price}}</text>
+              <text>{{tpl0.SaveCount}}人种草</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button wx:if="{{hasMore==false}}" disabled="true" style="margin:0;width:100%">我也是有底线的...</button>
+    </view>
+
+    <view wx:elif="{{currentTab==1}}">
+      <view class="rootstyle" >
+        <view class="itp" data-pid="{{tpl1.ID}}" bindtap="productDetaile" wx:for="{{typeProductList}}" wx:for-item="tpl1" wx:for-index="i" wx:key="i">
+          <image src="{{tpl1.FaceSrc}}" mode="aspectFill"></image>
+          <view class="tp">
+            <view class="title">{{tpl1.Name}}</view>
+            <view>
+              <text>{{tpl1.Shop.Name}}</text>
+              <text>{{tpl1.Shop.CityNames}}</text>
+            </view>
+            <view class="price">
+              <text>¥{{tpl1.Price}}</text>
+              <text>{{tpl1.SaveCount}}人种草</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button wx:if="{{hasMore==false}}" disabled="true" style="margin:0;width:100%">我也是有底线的...</button>
+    </view>
+
+    <view wx:elif="{{currentTab==2}}">
+      <view class="rootstyle" >
+        <view class="itp" data-pid="{{tpl2.ID}}" bindtap="productDetaile" wx:for="{{typeProductList}}" wx:for-item="tpl2" wx:for-index="i" wx:key="i">
+          <image src="{{tpl2.FaceSrc}}" mode="aspectFill"></image>
+          <view class="tp">
+            <view class="title">{{tpl2.Name}}</view>
+            <view>
+              <text>{{tpl2.Shop.Name}}</text>
+              <text>{{tpl2.Shop.CityNames}}</text>
+            </view>
+            <view class="price">
+              <text>¥{{tpl2.Price}}</text>
+              <text>{{tpl2.SaveCount}}人种草</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button wx:if="{{hasMore==false}}" disabled="true" style="margin:0;width:100%">我也是有底线的...</button>
+    </view>
+
+    <view wx:elif="{{currentTab==3}}">
+      <view class="rootstyle" >
+        <view class="itp" data-pid="{{tpl3.ID}}" bindtap="productDetaile" wx:for="{{typeProductList}}" wx:for-item="tpl3" wx:for-index="i" wx:key="i">
+          <image src="{{tpl3.FaceSrc}}" mode="aspectFill"></image>
+          <view class="tp">
+            <view class="title">{{tpl3.Name}}</view>
+            <view>
+              <text>{{tpl3.Shop.Name}}</text>
+              <text>{{tpl3.Shop.CityNames}}</text>
+            </view>
+            <view class="price">
+              <text>¥{{tpl3.Price}}</text>
+              <text>{{tpl3.SaveCount}}人种草</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button wx:if="{{hasMore==false}}" disabled="true" style="margin:0;width:100%">我也是有底线的...</button>
+    </view>
+
+    <view wx:elif="{{currentTab==4}}">
+      <view class="rootstyle" >
+        <view class="itp" data-pid="{{tpl4.ID}}" bindtap="productDetaile" wx:for="{{typeProductList}}" wx:for-item="tpl4" wx:for-index="i" wx:key="i">
+          <image src="{{tpl4.FaceSrc}}" mode="aspectFill"></image>
+          <view class="tp">
+            <view class="title">{{tpl4.Name}}</view>
+            <view>
+              <text>{{tpl4.Shop.Name}}</text>
+              <text>{{tpl4.Shop.CityNames}}</text>
+            </view>
+            <view class="price">
+              <text>¥{{tpl4.Price}}</text>
+              <text>{{tpl4.SaveCount}}人种草</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button wx:if="{{hasMore==false}}" disabled="true" style="margin:0;width:100%">我也是有底线的...</button>
+    </view>
+
+  </scroll-view>
+</view>
+
+<!-- <view class='evaluate' wx:if="{{currentData==2}}">评价</view> -->
+
+
+
+<!-- 顶部导航条 -->
+<!-- <scroll-view id="comment" bindtap="changescroll" scroll-y="true" bindscroll="scroll" class="navbar" enable-flex>
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</scroll-view> -->

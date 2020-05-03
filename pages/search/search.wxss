@@ -1,0 +1,144 @@
+/* search.wxss */
+
+.nav {
+  background: white;
+  z-index: 99;
+  box-shadow: 0rpx -1.2rpx 10rpx 4rpx #dddddd99; /*for Android*/
+  -webkit-box-shadow: 0px -0.6px 5px 2px #dddddd99;
+}
+.positionFixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0rpx -1.2rpx 10rpx 4rpx #dddddd99; /*for Android*/
+  -webkit-box-shadow: 0px -0.6px 5px 2px #dddddd99;
+}
+
+/************* 搜索框 ***************/
+.page_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20rpx 22rpx 15rpx;
+  background-color: white;
+}
+.search{
+  width: 85%;
+}
+.search_arr {
+  border-radius: 6rpx;
+  background-color: #f4f4f4
+}
+.search_arr input{
+  margin-left: 20rpx;
+  height: 71rpx;
+  border-radius: 6rpx;
+  font-size: 25rpx;
+  color:#555;
+}
+ 
+.sousuo {
+  margin-left: 15rpx;
+  width: 12.5%;
+  height: 71rpx;
+  line-height: 200%;
+  text-align: center;
+  background-color: #f46;
+  color:#fff;
+  border-radius: 6rpx;
+}
+
+
+/************* 导航栏 ***************/
+
+.navbar{
+  flex: 1;
+  display: flex;
+  background: #fff;
+  font-size: 26rpx;
+  color: #555;
+  box-sizing: border-box;
+  padding:0 28rpx;
+}
+.navbar .item{
+  position: relative;
+  flex: 1;
+  text-align: center;
+  line-height: 70rpx;
+}
+.navbar .item.active{
+  color: #F46;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5rpx;
+  background: #F46;
+}
+
+/**************** 商品列表 ****************/
+.rootstyle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.titles{
+  height:60rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top:30rpx;
+  font-size: 26rpx;
+}
+
+.titles>image{
+  height:26rpx;
+  width:35%;
+  margin-top: 7rpx;
+}
+
+/* 上侧图片父组件样式 */
+.itp{
+  width:49.4%;
+  background: white;
+  margin-top:10rpx;
+}
+/* 图片的宽高 */
+.itp>image{
+  width:100%;
+  height:370rpx
+}
+.tp{padding: 0 18rpx;}
+.tp>view{margin:12rpx 0}
+.tp>view:nth-child(1){
+  font-size: 27rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.tp>view:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin:15rpx 0
+}
+.tp>view:nth-child(3){
+  color:#f46;
+  font-size: 36rpx;
+  text-align: left;
+  font-weight: 500;
+}
+
+.tp>view:nth-child(3) text:last-child{
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin-left: 28rpx;
+}
+.specify-style {
+  font-weight: 800;
+  position: relative;
+}

@@ -1,0 +1,51 @@
+/* pages/speciallist/speciallist.wxss */
+page{
+  background-color: #f4f4f4;
+  color:#555;
+}
+/***************** 主题商品 *****************/
+.special{
+  padding:25rpx;
+  background-color: white;
+  margin:20rpx 0;
+}
+.special .rootstyle{
+  display: flex;
+  flex-direction: column;
+
+}
+/* 上侧图片父组件样式 */
+.special .topimg{
+  width:100%;
+}
+/* 上侧图片的宽高 */
+.special .imgstyle{
+  width:100%;
+  height:220rpx
+}
+/* 下侧内容父组件样式 */
+.special .bottom{
+  display: flex;
+  overflow-y: auto;
+  height:100%;
+}
+/* 下侧图片价格父元素 */
+.special .bottomip{
+  margin: 3rpx 14rpx 6rpx 0;
+  display: flex;
+  flex-direction: column
+}
+/* 下侧图片样式 */
+.special .bottomimg{
+  width:174rpx;
+  height:174rpx;
+  border-radius: 0.3rem;
+}
+/* 下侧文本样式 */
+.special .bottomprice{
+  color:#ff4466;
+  font-size: 26rpx;
+  font-weight: 500;
+  padding:5rpx 0 14rpx 0;
+  text-align: center
+}

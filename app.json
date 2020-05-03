@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/search1/search1",
+    "pages/type/type",
+    "pages/typeproduct/typeproduct",
+    "pages/speciallist/speciallist",
+    "pages/special/special",
+    "pages/productdetails/productdetails",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f46",
+    "navigationBarTitleText": "汉服荟商城",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#f69",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "商城主页",
+        "iconPath": "images/page.png",
+        "selectedIconPath": "images/page_selected.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_selected.png"
+      }
+    ]
+  }
+}

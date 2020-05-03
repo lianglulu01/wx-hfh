@@ -1,0 +1,283 @@
+/**index.wxss**/
+page{
+  background-color: #f4f4f4;
+  color:#555;
+}
+
+/***************** 搜索框 *****************/
+.page_search{
+  padding:17rpx 3.5%;
+  background-color: white;
+}
+.search{
+  width: 100%;
+}  
+.search_arr {
+  border-radius: 5rpx;  
+  background-color: #f4f4f4
+}  
+.search_arr input{  
+  margin-left: 38%;  
+  height: 71rpx;  
+  border-radius: 10rpx;
+  color:#eee;
+  font-size: 26rpx;
+}
+.search_arr image{  
+  margin: 18rpx 15rpx 15rpx 30%;  
+  position: absolute;  
+  left:25rpx;  
+  z-index: 2;  
+  width: 16px;  
+  height: 16px;  
+  text-align: center;  
+}
+
+/***************** 轮播图 *****************/
+.top_slide{
+  position: relative;
+  width:100%;height:280rpx;
+}
+
+/***************** 商品分类 *****************/
+.typelist{
+  display: flex;
+  flex-wrap: wrap;
+  border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
+  background-color: white;
+  padding:15rpx 0;
+}
+.type{
+  width:25%;
+  display: flex;
+  flex-direction: column;
+  margin: 15rpx 0;
+}
+.type image{
+  width:63%;
+  margin: 0 auto;
+}
+.type text{
+  text-align: center;
+  color:#898989;
+  font-size: 26rpx;
+  margin-top:8rpx
+}
+
+/***************** 品牌馆/二手铺 *****************/
+.trading{
+  background-color: #fff;
+  padding: 30rpx 24rpx;
+  width:702rpx;
+}
+.nav_top{
+  display: flex;
+  justify-content: space-between
+}
+.nav_top image{
+  width:34rpx;
+  height:34rpx;
+  vertical-align: middle
+}
+.nav_top view:first-child image{
+  margin-right: 10rpx;
+}
+.nav_top view:last-child image{
+  margin-left: 10rpx;
+}
+.nav_top view:first-child text{
+  font-size: 28rpx;
+  font-weight: 700;
+  color:#555;
+}
+.nav_top view:last-child text{
+  font-size: 25rpx;
+  color:#999;
+}
+.nav_top:last-child image{
+  width:116rpx;
+}
+.shoplist{
+  display: flex;
+  justify-content: space-between;
+  padding:30rpx 0 10rpx;
+}
+.shoplist image{
+  display: flex;
+  width:116rpx;
+  margin: 0 auto;
+}
+
+/* .brand{
+  width:50%;
+  height:120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  border-right:1px solid #eee
+}
+.brand image{
+  width:60rpx;
+  vertical-align: middle;
+}
+.brand text{
+  color:#898989;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+} */
+
+/***************** 主题商品 *****************/
+.special{
+  padding:25rpx;
+  background-color: white;
+  margin:20rpx 0;
+}
+.special .rootstyle{
+  display: flex;
+  flex-direction: column;
+
+}
+/* 上侧图片父组件样式 */
+.special .topimg{
+  width:100%;
+}
+/* 上侧图片的宽高 */
+.special .imgstyle{
+  width:100%;
+  height:220rpx
+}
+/* 下侧内容父组件样式 */
+.special .bottom{
+  display: flex;
+  overflow-y: auto;
+  height:100%;
+}
+/* 下侧图片价格父元素 */
+.special .bottomip{
+  margin: 3rpx 14rpx 6rpx 0;
+  display: flex;
+  flex-direction: column
+}
+/* 下侧图片样式 */
+.special .bottomimg{
+  width:174rpx;
+  height:174rpx;
+  border-radius: 0.3rem;
+}
+/* 下侧文本样式 */
+.special .bottomprice{
+  color:#ff4466;
+  font-size: 26rpx;
+  font-weight: 500;
+  padding:5rpx 0 14rpx 0;
+  text-align: center
+}
+/* 更多专题 按钮样式 */
+.more{
+  background: white;
+  text-align: center
+}
+.more button{
+  display: inline-block;
+  padding: 8rpx 15rpx;
+  color: #ff4466;
+  font-weight: 400;
+  border: 1px solid #ff4466;
+  border-radius: 0.2rem;
+  background-color: white
+}
+
+/***************** 热卖商品 *****************/
+.selling_product{
+  background-color: white
+}
+.selling_product .rootstyle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 24rpx;
+}
+/* 上侧图片父组件样式 */
+.selling_product .itp{
+  width:32.5%;
+  display: flex;
+  flex-direction: column;
+}
+/* 图片的宽高 */
+.selling_product .itp image{
+  width:100%;
+  height:230rpx;
+}
+.selling_product .itp view:nth-child(2){
+  font-size: 24rpx;
+  text-overflow: ellipsis;
+  height:32rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  margin:15rpx 0 5rpx 0; 
+}
+.selling_product .itp view:nth-child(3){
+  color:#f46;
+  text-align: left;
+  font-weight: 500;
+  padding-bottom: 20rpx
+}
+
+/***************** 精选商品 *****************/
+.new_product .rootstyle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.titles{
+  height:50rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top:30rpx;
+  font-size: 26rpx;
+}
+
+.titles>image{
+  height:26rpx;
+  width:35%;
+  margin-top: 7rpx;
+}
+
+/* 上侧图片父组件样式 */
+.new_product .itp{
+  width:49.4%;
+  background: white;
+  margin-top:10rpx;
+}
+/* 图片的宽高 */
+.new_product .itp>image{
+  width:100%;
+  height:370rpx
+}
+.new_product .tp{padding: 0 18rpx;}
+.new_product .tp>view{margin:12rpx 0}
+.new_product .tp>view:nth-child(1){
+  font-size: 27rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.new_product .tp>view:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin:15rpx 0
+}
+.new_product .tp>view:nth-child(3){
+  color:#f46;
+  font-size: 36rpx;
+  text-align: left;
+  font-weight: 500;
+}
+
+.new_product .tp>view:nth-child(3) text:last-child{
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin-left: 28rpx;
+}

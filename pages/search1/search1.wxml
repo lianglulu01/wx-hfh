@@ -1,0 +1,7 @@
+<!--pages/search1.wxml-->
+<!--  搜索框  -->
+<view class='search'>
+    <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+    <image class="" src='/images/cart.png' bindtap='query'></image>
+</view>
+

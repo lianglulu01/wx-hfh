@@ -1,0 +1,165 @@
+<!--pages/productdetails/productdetails.wxml-->
+<view class="main">
+  <view class="is-fixed-top">
+    <view class="top_fixed">
+      <view bindtap="toIndex">
+        <image src="/images/page_selected.png" mode="widthFix"></image><text>商城主页</text>
+      </view>
+      <view bindtap="toCart">
+        <image src="/images/cart_selected.png" mode="widthFix"></image><text>购物车</text>
+      </view>
+      <view bindtap="toUser">
+        <image src="/images/user_selected.png" mode="widthFix"></image><text>个人中心</text>
+      </view>
+    </view>
+  </view>
+  <view class="product_info_head">
+    <view class="top_slide">
+      <swiper style="height: 375px;">
+        <block wx:for="{{productDetails.Banners}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item.ImgSrc}}" style="width:375px;height:375px" mode="aspectFill"></image>
+            <view class="index">{{item.Sort}}/{{productDetails.Banners.length}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="pic">图片</view>
+    </view>
+    <view class="info">
+      <view class="info_name">{{productDetails.Name}}</view>
+      <view class="info_price" style="font-weight: 500;">¥ {{productDetails.PriceRange}}</view>
+      <view class="info_sum">
+        <view class="one" >邮费: <text>{{productDetails.PostageID == 0 || productDetails.PostageID == 410 || productDetails.PostageID == 2 ? '包邮' : productDetails.PostageID == 506 ? '包邮' : productDetails.PostageID == 504 || productDetails.PostageID == 251 || productDetails.PostageID == 374 ? '¥8.00' : productDetails.PostageID == 578 ? '¥10.00' : ''}}</text></view>
+        <view class="two">库存: <text>{{productDetails.Stock}}</text></view>
+        <view class="three"><text>{{productDetails.SaveCount}} </text>人已种草</view>
+      </view>
+      <view class="product_server">
+        <view class="shopday" wx:if="{{productDetails.ShipDay}}">
+          <image src="/images/choose_fen.png" mode="aspectFill"></image>
+          <text>{{productDetails.ShipDay+"天內发货"}}</text>
+        </view>
+        <view class="real">
+          <image src="/images/choose_fen.png"></image>
+          <text>正品保证</text>
+        </view>
+        <view class="gray">
+          <image src="/images/choose_hui.png" wx:if="{{productDetails.SevenReturn==false}}"></image>
+          <image src="/images/choose_fen.png" wx:else="{{productDetails.SevenReturn==true}}"></image>
+          <text>{{productDetails.SevenReturn==false?'不支持七天无理由退货':'支持七天无理由退货'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="product_pay">
+    <view>支付</view>
+    <view>
+      <image src="/images/wechat.png"></image>
+      <text>微信支付</text>
+      <image src="/images/zhifubao.png"></image>
+      <text>支付宝</text>
+      <image src="/images/huabai.png"></image>
+      <text>花呗</text>
+    </view>
+  </view>
+  <view class="product_sel">
+    <view bindtap="clickme" class="product_open">
+      <text>请选择 颜色 尺寸</text>
+      <image src="/images/right.png"></image>
+    </view>
+    <!--屏幕背景变暗的背景  -->
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+    <!--弹出框  -->
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}" wx:for="{{productDetails.Skus}}" wx:key="index">
+      <image src="{{productDetails.FaceSrc}}" mode="widthFix"></image>
+      <view>
+        <view>¥ {{item.BasePrice}}</view>
+        <view>库存 {{item.Stock}}</view>
+        <view>已选择 {{item.Style.Name}},{{item.Size.Name}}</view>
+      </view>
+      <view>X</view>
+      <view class="ss">
+        <view class="size">
+          <view>尺码</view>
+          <text wx:for="{{productDetails.Skus}}" wx:for-item="s" wx:key="index">{{s.Size.Name}}</text>
+        </view>
+        <view class="style">
+          <view>样式</view>
+          <text wx:for="{{productDetails.Skus}}" wx:for-item="t" wx:key="index">{{t.Style.Name}}</text>
+        </view>
+        <view>
+          <text>购买数量</text>
+          <text>
+            <button>-</button>
+            <text>1</text>
+            <button>+</button>
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="product_info_shop">
+    <view class="data">
+      <view class="name">
+        <image src="{{productDetails.Shop.LogoSrc}}"></image>
+        <text>{{productDetails.Shop.Name}}</text>
+      </view>
+      <view class="counts">
+        <view class="count">
+          <text>{{productDetails.Shop.ProductCount}}</text>
+          <text>商品</text>
+        </view>
+        <view class="count">
+          <text>{{productDetails.Shop.AtteCount}}</text>
+          <text>粉丝</text>
+        </view>
+      </view>
+      
+    </view>
+    <view class="btn">
+      <view>
+        <image src="../../images/icon_followshop.png" />关注店铺
+      </view>
+      <view>
+        <image src="../../images/icon_entershop.png" />进入店铺
+      </view>
+    </view>
+  </view>
+  <view class="info_text">
+    <view>商品描述</view>
+    <view class="info_con" wx:for="{{art}}" wx:key="index">{{item}}</view>
+  </view>
+  <view class="info_pic">
+    <block wx:for="{{productDetails.Images}}" wx:key="index">
+      <image src="{{item.ImgSrc}}" mode="widthFix" alt/>
+    </block>
+  </view>
+  <view class="info_other">
+    <view class="see_other">瞅了又瞅</view>
+    <view class="product_other">
+      <view class="itp" wx:for="{{productRelevant}}" wx:for-item="pr" wx:for-index="i" wx:key="i"  bindtap="productDetaile" data-pid="{{pr.ID}}">
+        <image class="imgstyle" src="{{pr.FaceSrc}}" mode="aspectFill"></image>
+        <view class="title">{{pr.Name}}</view>
+        <view class="price">¥ {{pr.Price}}.00</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="is-fixed-bottom">
+    <view class="bottom_fixed">
+      <view>
+        <image src="/images/page_selected.png" mode="widthFix"></image><text>私敲</text>
+      </view>
+      <view>
+        <image src="/images/cart_selected.png" mode="widthFix"></image><text>店铺</text>
+      </view>
+      <view>
+        <image src="/images/user_selected.png" mode="widthFix"></image><text>种草</text>
+      </view>
+    </view>
+    <view class="car_shop">
+      <text>加入购物车</text>
+      <text>立即剁手</text>
+    </view>
+  </view>
+</view>
+

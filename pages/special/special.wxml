@@ -1,0 +1,26 @@
+<!--pages/special/special.wxml-->
+<view class="spe_info">
+  <view class="info_title">{{special.Title}}</view>
+  <view class="info_aut">
+    <text>本期小编：<text class="nick">{{special.User.NickName}}</text>
+    </text>
+    <text>阅读 {{special.ClickCount}}</text>
+  </view>
+  <view class="info_con" wx:for="{{art}}" wx:key="index">{{item}}</view>
+</view>
+<view class="rootstyle" >
+  <view class="itp" data-pid="{{sp.ID}}" bindtap="productDetaile" wx:for="{{specialProducts}}" wx:for-item="sp" wx:for-index="i" wx:key="i">
+    <image src="{{sp.FaceSrc}}"></image>
+    <view class="tp">
+      <view class="title">{{sp.Name}}</view>
+      <view>
+        <text>{{sp.Shop.Name}}</text>
+        <text>{{sp.Shop.CityNames}}</text>
+      </view>
+      <view class="price">
+        <text>¥ {{sp.Price}}.00</text>
+        <text>{{sp.SaveCount}}人种草</text>
+      </view>
+    </view>
+  </view>
+</view>

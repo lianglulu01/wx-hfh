@@ -1,0 +1,82 @@
+/* pages/special/special.wxss */
+.spe_info{
+  color:#555;
+  padding: 30rpx 20rpx;
+}
+.info_title{
+  font-size: 45rpx;
+}
+.info_aut{
+  color:#898989;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+  margin:25rpx 0;
+}
+.info_aut .nick{
+  color:#1c92e2;
+}
+.info_con{
+  font-size: 26rpx;
+  line-height: 1.4rem;
+  margin-bottom:15rpx;
+}
+
+.rootstyle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.titles{
+  height:60rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top:30rpx;
+  font-size: 26rpx;
+}
+
+.titles>image{
+  height:26rpx;
+  width:35%;
+  margin-top: 7rpx;
+}
+
+/* 上侧图片父组件样式 */
+.itp{
+  width:49.2%;
+  background: white;
+  margin-top:10rpx;
+}
+/* 图片的宽高 */
+.itp>image{
+  width:100%;
+  height:370rpx
+}
+.tp{padding: 0 18rpx;}
+.tp>view{margin:12rpx 0}
+.tp>view:nth-child(1){
+  font-size: 27rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#555;
+}
+.tp>view:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin:15rpx 0
+}
+.tp>view:nth-child(3){
+  color:#f46;
+  font-size: 36rpx;
+  text-align: left;
+  font-weight: 500;
+}
+
+.tp>view:nth-child(3) text:last-child{
+  font-size: 24rpx;
+  color:#bcbcbc;
+  margin-left: 28rpx;
+}

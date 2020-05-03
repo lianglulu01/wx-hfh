@@ -1,0 +1,9 @@
+<!--pages/type/type.wxml-->
+<view class="type" wx:for="{{parentID}}" wx:for-item="p" wx:key="index">
+  <view class="parenttitle">
+    <text bindtap="typeProductList" data-pid="{{p.ID}}">{{p.name}} </text>
+  </view>
+  <view class="parent">
+    <text wx:if="{{item.ParentID==p.ID}}" wx:for="{{typeList}}" wx:key="index" size="mini" bindtap="typeProductList" data-pid="{{p.ID}}" data-tid="{{item.ID}}">{{item.Name}}</text>
+  </view>
+</view>
